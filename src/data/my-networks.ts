@@ -1,7 +1,5 @@
 import {
-  IconBrandFacebook,
   IconBrandGithub,
-  IconBrandInstagram,
   IconBrandLinkedin,
   IconMail
 } from '@tabler/icons-react'
@@ -22,14 +20,4 @@ export const MY_NETWORKS = [
     icon: IconMail,
     href: 'mailto:works.vobaolong@gmail.com'
   }
-  // {
-  //   name: 'Facebook',
-  //   icon: IconBrandFacebook,
-  //   href: 'https://www.facebook.com/vobaolong/'
-  // },
-  // {
-  //   name: 'Instagram',
-  //   icon: IconBrandInstagram,
-  //   href: 'https://www.instagram.com/vobaolong/'
-  // }
 ]

@@ -2,7 +2,7 @@
 
 A modern, responsive developer portfolio showcasing skills, projects, and professional experience. Built with cutting-edge web technologies and optimized for performance.
 
-![Portfolio Preview](https://media.daily.dev/image/upload/s--aWLslYU3--/f_auto/v1744482505/ugc/content_50c23b68-02a5-43d8-bb3e-e0b3b2f269d0)
+![Portfolio Preview]()
 
 ## 🚀 Live Demo
 
@@ -19,7 +19,6 @@ A modern, responsive developer portfolio showcasing skills, projects, and profes
 - **Accessibility**: Built with accessibility best practices
 - **Project Showcase**: Dynamic project gallery with detailed descriptions
 - **Skills Visualization**: Interactive skills and technology display
-- **Spotify Integration**: Embedded playlist with theme-aware styling
 
 ## 🛠️ Tech Stack
 
