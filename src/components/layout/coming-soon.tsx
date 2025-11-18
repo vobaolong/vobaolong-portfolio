@@ -6,6 +6,7 @@ import { HoverBorderGradient } from '../ui/hover-border-gradient'
 import { Logo } from '../svg/logo'
 import { useRouter } from 'next/navigation'
 import { FullScreen } from '../full-screen'
+import Link from 'next/link'
 
 export const ComingSoonPage = ({ pageName }: { pageName?: string }) => {
   const [mounted, setMounted] = useState(false)
@@ -59,18 +60,22 @@ export const ComingSoonPage = ({ pageName }: { pageName?: string }) => {
           <span>✔ Setting up animations and transitions.</span>
         </AnimatedSpan>
 
-        <AnimatedSpan delay={6000} className='text-blue-500'>
-          <span>ℹ {pageName}:</span>
-          <span className='pl-2'>- Coming Soon</span>
-        </AnimatedSpan>
-
         <TypingAnimation delay={6500} className='text-muted-foreground'>
           Success! Portfolio initialization completed.
         </TypingAnimation>
 
         <TypingAnimation delay={7000} className='text-muted-foreground'>
-          Launching soon at
+          Launching at:
         </TypingAnimation>
+        <AnimatedSpan delay={7500} className='text-blue-500'>
+          <Link
+            href='https://vobaolong-portfolio.vercel.app/'
+            target='_blank'
+            className='text-blue-500 underline'
+          >
+            https://vobaolong-portfolio.vercel.app/
+          </Link>
+        </AnimatedSpan>
       </Terminal>
 
       <div className='flex mt-10 justify-center text-center '>

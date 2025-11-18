@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-"use client"
+'use client'
 
-import React, { useState, useEffect, useId } from "react"
-import { motion } from "motion/react"
-import { cn } from "@/lib/utils"
+import React, { useState, useEffect, useId } from 'react'
+import { motion } from 'motion/react'
+import { cn } from '@/lib/utils'
 
 export interface ContainerTextFlipProps {
   /** Array of words to cycle through in the animation */
@@ -19,11 +19,11 @@ export interface ContainerTextFlipProps {
 }
 
 export function ContainerTextFlip({
-  words = ["better", "modern", "beautiful", "awesome"],
+  words = ['better', 'modern', 'beautiful', 'awesome'],
   interval = 3000,
   className,
   textClassName,
-  animationDuration = 700,
+  animationDuration = 700
 }: ContainerTextFlipProps) {
   const id = useId()
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
@@ -60,11 +60,11 @@ export function ContainerTextFlip({
       animate={{ width }}
       transition={{ duration: animationDuration / 2000 }}
       className={cn(
-        "relative inline-block rounded-lg pt-2 pb-3 text-center text-4xl font-bold text-black md:text-7xl dark:text-white",
-        "[background:linear-gradient(to_bottom,var(--color-gray-100),var(--color-gray-200))]",
-        "shadow-[inset_0_-1px_var(--color-gray-300),inset_0_0_0_1px_var(--color-gray-300),_0_4px_8px_var(--color-gray-300)]",
-        "dark:[background:linear-gradient(to_bottom,var(--color-neutral-700),var(--color-neutral-800))]",
-        "dark:shadow-[inset_0_-1px_#10171e,inset_0_0_0_1px_hsla(205,89%,46%,.24),_0_4px_8px_#00000052]",
+        'relative inline-block rounded-lg pt-2 pb-3 text-center text-4xl font-bold text-black md:text-7xl dark:text-white',
+        '[background:linear-gradient(to_bottom,var(--color-gray-100),var(--color-gray-200))]',
+        'shadow-[inset_0_-1px_var(--color-gray-300),inset_0_0_0_1px_var(--color-gray-300),0_4px_8px_var(--color-gray-300)]',
+        'dark:[background:linear-gradient(to_bottom,var(--color-neutral-700),var(--color-neutral-800))]',
+        'dark:shadow-[inset_0_-1px_#10171e,inset_0_0_0_1px_hsla(205,89%,46%,.24),0_4px_8px_#00000052]',
         className
       )}
       key={words[currentWordIndex]}
@@ -72,26 +72,26 @@ export function ContainerTextFlip({
       <motion.div
         transition={{
           duration: animationDuration / 1000,
-          ease: "easeInOut",
+          ease: 'easeInOut'
         }}
-        className={cn("inline-block", textClassName)}
+        className={cn('inline-block', textClassName)}
         ref={textRef}
         layoutId={`word-div-${words[currentWordIndex]}-${id}`}
       >
-        <motion.div className="inline-block">
-          {words[currentWordIndex].split("").map((letter, index) => (
+        <motion.div className='inline-block'>
+          {words[currentWordIndex].split('').map((letter, index) => (
             <motion.span
               key={index}
               initial={{
                 opacity: 0,
-                filter: "blur(10px)",
+                filter: 'blur(10px)'
               }}
               animate={{
                 opacity: 1,
-                filter: "blur(0px)",
+                filter: 'blur(0px)'
               }}
               transition={{
-                delay: index * 0.02,
+                delay: index * 0.02
               }}
             >
               {letter}

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   motion,
@@ -7,11 +7,11 @@ import {
   useScroll,
   useSpring,
   useTransform,
-  useVelocity,
-} from "motion/react"
-import React, { useEffect, useRef, useState } from "react"
+  useVelocity
+} from 'motion/react'
+import React, { useEffect, useRef, useState } from 'react'
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 
 interface VelocityScrollProps extends React.HTMLAttributes<HTMLDivElement> {
   defaultVelocity?: number
@@ -39,11 +39,11 @@ function ParallaxText({
   const scrollVelocity = useVelocity(scrollY)
   const smoothVelocity = useSpring(scrollVelocity, {
     damping: 50,
-    stiffness: 400,
+    stiffness: 400
   })
 
   const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-    clamp: false,
+    clamp: false
   })
 
   const [repetitions, setRepetitions] = useState(1)
@@ -62,8 +62,8 @@ function ParallaxText({
 
     calculateRepetitions()
 
-    window.addEventListener("resize", calculateRepetitions)
-    return () => window.removeEventListener("resize", calculateRepetitions)
+    window.addEventListener('resize', calculateRepetitions)
+    return () => window.removeEventListener('resize', calculateRepetitions)
   }, [children])
 
   const x = useTransform(baseX, (v) => `${wrap(-100 / repetitions, 0, v)}%`)
@@ -86,13 +86,13 @@ function ParallaxText({
   return (
     <div
       ref={containerRef}
-      className="w-full overflow-hidden whitespace-nowrap"
+      className='w-full overflow-hidden whitespace-nowrap'
       {...props}
     >
-      <motion.div className="inline-block" style={{ x }}>
+      <motion.div className='inline-block' style={{ x }}>
         {Array.from({ length: repetitions }).map((_, i) => (
           <span key={i} ref={i === 0 ? textRef : null}>
-            {children}{" "}
+            {children}{' '}
           </span>
         ))}
       </motion.div>
@@ -110,7 +110,7 @@ export function VelocityScroll({
   return (
     <div
       className={cn(
-        "relative w-full text-4xl font-bold tracking-[-0.02em] md:text-7xl ",
+        'relative w-full text-4xl font-bold tracking-[-0.02em] md:text-7xl ',
         className
       )}
       {...props}

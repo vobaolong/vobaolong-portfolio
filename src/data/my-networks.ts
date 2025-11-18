@@ -8,7 +8,7 @@ export const MY_NETWORKS = [
   {
     name: 'Github',
     icon: IconBrandGithub,
-    href: 'https://github.com/vobaolong/vobaolong-portfolio'
+    href: 'https://github.com/vobaolong'
   },
   {
     name: 'Linkedin',

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: 'About | Bao Long Dev',
     description:
       'Discover the story and journey of Bao Long Dev in the world of web development.',
-    url: 'https://',
+    url: 'https://vobaolong-portfolio.vercel.app/',
     siteName: 'Bao Long Dev',
     type: 'website',
     locale: 'en_US'
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       'Learn more about Bao Long Dev - Frontend Developer and tech enthusiast.'
   },
   alternates: {
-    canonical: 'https://'
+    canonical: 'https://vobaolong-portfolio.vercel.app/'
   }
 }
 

@@ -2,11 +2,11 @@
 
 A modern, responsive developer portfolio showcasing skills, projects, and professional experience. Built with cutting-edge web technologies and optimized for performance.
 
-![Portfolio Preview]()
+![Portfolio Preview](https://)
 
 ## 🚀 Live Demo
 
-<!-- [View Live Portfolio](https:) -->
+[View Live Portfolio](https://vobaolong-portfolio.vercel.app/)
 
 ## ✨ Features
 

@@ -15,28 +15,6 @@ export function MyInformation() {
     <>
       <div className='flex flex-col gap-6'>
         <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full'>
-          {/* <Card className="col-span-1 md:col-span-1 lg:col-span-2 dark:bg-black/50 bg-white/50 p-0 order-2 md:order-1">
-            <CardContent className="!p-0 h-full">
-              <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background">
-                <Image
-                  src="/images/Subject4.png"
-                  alt="avatar"
-                  width={1000}
-                  height={1000}
-                  className="z-10 object-contain md:translate-y-32 hidden dark:block"
-                />
-
-                <Image
-                  src="/images/Subject5.png"
-                  alt="avatar"
-                  width={1000}
-                  height={1000}
-                  className="z-10 object-contain md:translate-y-32 dark:hidden"
-                />
-                <Ripple className="" />
-              </div>
-            </CardContent>
-          </Card> */}
           <div className='col-span-1 md:col-span-1 lg:col-span-2 dark:bg-black/50 bg-white/50 p-0 order-2 md:order-1'>
             <MyResume />
           </div>
@@ -74,12 +52,12 @@ export function MyInformation() {
                 </div>
                 <div className='space-y-6 flex-1 flex flex-col items-center justify-center'>
                   <h3 className='pt-0.5 text-lg font-bold text-balance text-black md:text-4xl dark:text-white'>
-                    Passionate about technology and frontend craftsmanship.
+                    I'm passionate about technology and frontend development.
                   </h3>
                   <h2 className='text-sm/[1.125rem] text-black md:text-base/[1.375rem] dark:text-neutral-400 [&_b]:md:font-semibold [&_strong]:md:font-semibold'>
-                    I thrive on learning, leading, and solving complex
-                    challenges — always reflecting on how each experience
-                    contributes to personal and team growth.
+                    I enjoy learning, taking initiative, and tackling complex
+                    challenges, always considering how each experience helps me
+                    and my team grow.
                   </h2>
                 </div>
 
@@ -97,7 +75,7 @@ export function MyInformation() {
 
       <VelocityScroll
         numRows={1}
-        className='!text-xl md:!text-3xl opacity-50 my-6'
+        className='text-xl! md:text-3xl! opacity-50 my-6'
       >
         ⭐ Personal Portfolio
       </VelocityScroll>
@@ -249,10 +227,9 @@ const KeySkills = () => {
     }
   }
 
-  // Array of skills with their colors for hover effects
   const skills = [
     {
-      name: 'React',
+      name: 'React.js',
       color: 'rgb(219 234 254)',
       darkColor: 'rgba(59, 130, 246, 0.2)'
     },
@@ -272,6 +249,32 @@ const KeySkills = () => {
       darkColor: 'rgba(6, 182, 212, 0.2)'
     },
     {
+      name: 'Ant Design',
+      color: 'rgb(207 250 254)',
+      darkColor: 'rgba(6, 182, 212, 0.2)'
+    },
+    {
+      name: 'Shadcn/ui',
+      color: 'rgb(207 250 254)',
+      darkColor: 'rgba(6, 182, 212, 0.2)'
+    },
+    {
+      name: 'Framer Motion',
+      color: 'rgb(207 250 254)',
+      darkColor: 'rgba(6, 182, 212, 0.2)'
+    },
+    {
+      name: 'MUI',
+      color: 'rgb(207 250 254)',
+      darkColor: 'rgba(6, 182, 212, 0.2)'
+    },
+    {
+      name: 'Tanstack Query',
+      color: 'rgb(207 250 254)',
+      darkColor: 'rgba(6, 182, 212, 0.2)'
+    },
+
+    {
       name: 'Redux',
       color: 'rgb(237 233 254)',
       darkColor: 'rgba(124, 58, 237, 0.2)'
@@ -290,6 +293,11 @@ const KeySkills = () => {
       name: 'Performance Optimization',
       color: 'rgb(254 243 199)',
       darkColor: 'rgba(245, 158, 11, 0.2)'
+    },
+    {
+      name: 'SEO',
+      color: 'rgb(207 250 254)',
+      darkColor: 'rgba(6, 182, 212, 0.2)'
     }
   ]
   return (

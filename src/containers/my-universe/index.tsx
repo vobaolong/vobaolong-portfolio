@@ -60,28 +60,22 @@ export const MyUniverse = () => {
           <Title />
         </div>
 
-        {/* Responsive positioning for floating elements */}
         <div className='px-3 py-2 hidden sm:block absolute top-8 left-16 sm:left-32 bg-purple-500/20 rounded-[6px] w-max font-medium dark:text-purple-300 text-purple-500 border border-purple-500/20 animate-wiggle duration-1000'>
-          UI Magic
+          Reusable Components
         </div>
 
         <div className='px-3 py-2 hidden sm:block absolute top-24 right-4 sm:right-10 bg-blue-500/20 rounded-[6px] w-max font-medium dark:text-blue-300 text-blue-500 border border-blue-500/20 animate-wiggle duration-1000'>
           Clean Code
         </div>
-
-        {/* <div className="px-3 py-2 hidden sm:block absolute bottom-36 right-2 sm:right-20 bg-yellow-500/20 rounded-[6px] w-max font-medium dark:text-yellow-300 text-yellow-500 border border-yellow-500/20 animate-wiggle duration-1000">
-          Innovation
-        </div> */}
-
         <div className='flex items-center justify-center md:justify-start'>
           <motion.div
             layout
             className={cn(
               'md:w-fit w-full py-2 px-4 sm:px-8 text-base sm:text-lg md:text-xl font-bold my-5 rounded-lg pt-2 pb-3 text-center text-black dark:text-white',
               '[background:linear-gradient(to_bottom,var(--color-gray-100),var(--color-gray-200))]',
-              'shadow-[inset_0_-1px_var(--color-gray-300),inset_0_0_0_1px_var(--color-gray-300),_0_4px_8px_var(--color-gray-300)]',
+              'shadow-[inset_0_-1px_var(--color-gray-300),inset_0_0_0_1px_var(--color-gray-300),0_4px_8px_var(--color-gray-300)]',
               'dark:[background:linear-gradient(to_bottom,var(--color-neutral-700),var(--color-neutral-800))]',
-              'dark:shadow-[inset_0_-1px_#10171e,inset_0_0_0_1px_hsla(205,89%,46%,.24),_0_4px_8px_#00000052]'
+              'dark:shadow-[inset_0_-1px_#10171e,inset_0_0_0_1px_hsla(205,89%,46%,.24),0_4px_8px_#00000052]'
             )}
           >
             <TextAnimate
@@ -89,18 +83,18 @@ export const MyUniverse = () => {
               animation={currentAnimation}
               by='character'
               startOnView={false}
-              className='break-words'
+              className='wrap-break-word'
             >
               {currentText}
             </TextAnimate>
           </motion.div>
         </div>
-        <div className='text-lg text-zinc-600 dark:text-zinc-400 my-6 md:my-10 font-bold'>
-          React Enthusiast ⚛️ | Next.js Explorer 🚀
+        <div className='text-lg text-zinc-900 dark:text-zinc-300 my-6 md:my-10 font-bold'>
+          Frontend Developer | JavaScript Enthusiast | Next.js Developer
           <br />{' '}
           <span className='font-normal italic'>
-            Leading scalable UI development & shaping modern web experiences
-            with clean, efficient code 💻✨
+            Leading scalable frontend development & shaping modern web
+            experiences with clean, efficient code 💻✨
           </span>
         </div>
       </div>
@@ -115,8 +109,8 @@ export function CompareDemo() {
   return (
     <div className='w-full border rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800'>
       <Compare
-        firstImage='https://voocgavdbpy2gucg.public.blob.vercel-storage.com/portfolio/image%20%283%29-9ohWXR6mPsqfP9GC3OXB6l23pKXqpS.png'
-        secondImage='https://voocgavdbpy2gucg.public.blob.vercel-storage.com/portfolio/image%20%284%29-Z38KH4uoJOoyhY6YDXVDNxRu8uWZUS.png'
+        firstImage='/images/left-profile.png'
+        secondImage='/images/right-projects.png'
         firstImageClassName='object-cover object-left-top'
         secondImageClassname='object-cover object-left-top'
         className='h-[200px] sm:h-[250px] md:h-[400px] lg:h-[500px] w-full'

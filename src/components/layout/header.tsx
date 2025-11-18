@@ -21,6 +21,7 @@ import {
   DrawerTitle,
   DrawerTrigger
 } from '../ui/drawer'
+import { Separator } from '@radix-ui/react-dropdown-menu'
 
 const links = [
   {
@@ -37,13 +38,8 @@ const links = [
   },
   {
     title: 'About',
-    href: '/about',
-    isComingSoon: true
+    href: '/about'
   }
-  // {
-  //   title: "Sponsors",
-  //   href: "/sponsors",
-  // },
 ]
 
 const pathNameDisableHeaderScroll = ['']
@@ -138,7 +134,6 @@ export const Header = () => {
                 <DrawerHeader className='flex justify-between'>
                   <DrawerTitle className='flex items-center gap-2'>
                     <Logo className='size-14' />
-                    {/* url of the website */}
                   </DrawerTitle>
                   <DrawerClose
                     asChild
@@ -164,11 +159,6 @@ export const Header = () => {
                       onClick={() => setIsDrawerOpen(false)}
                     >
                       {link.title}
-                      {link.isComingSoon && (
-                        <span className='text-sm bg-blue-300/10 text-blue-500 px-2 py-1 rounded-full'>
-                          Coming Soon
-                        </span>
-                      )}
                     </Link>
                   ))}
                 </div>

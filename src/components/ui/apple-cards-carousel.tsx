@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-"use client"
+'use client'
 import React, {
   useEffect,
   useRef,
   useState,
   createContext,
   useContext,
-  JSX,
-} from "react"
+  JSX
+} from 'react'
 import {
   IconArrowNarrowLeft,
   IconArrowNarrowRight,
-  IconX,
-} from "@tabler/icons-react"
-import { cn } from "@/lib/utils"
-import { AnimatePresence, motion } from "motion/react"
-import Image, { ImageProps } from "next/image"
-import { useOutsideClick } from "@/hooks/use-outside-click"
+  IconX
+} from '@tabler/icons-react'
+import { cn } from '@/lib/utils'
+import { AnimatePresence, motion } from 'motion/react'
+import Image, { ImageProps } from 'next/image'
+import { useOutsideClick } from '@/hooks/use-outside-click'
 
 interface CarouselProps {
   items: JSX.Element[]
@@ -26,9 +26,10 @@ interface CarouselProps {
 type Card = {
   src: string
   title: string
-  category: string
   content?: React.ReactNode
   techStack?: string[]
+  demo?: string
+  description?: string
 }
 
 export const CarouselContext = createContext<{
@@ -36,7 +37,7 @@ export const CarouselContext = createContext<{
   currentIndex: number
 }>({
   onCardClose: () => {},
-  currentIndex: 0,
+  currentIndex: 0
 })
 
 export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
@@ -48,11 +49,11 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   useEffect(() => {
     if (carouselRef.current) {
       carouselRef.current.scrollLeft = initialScroll
-      checkScrollability()
+      checkScrollAbility()
     }
   }, [initialScroll])
 
-  const checkScrollability = () => {
+  const checkScrollAbility = () => {
     if (carouselRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current
       setCanScrollLeft(scrollLeft > 0)
@@ -62,13 +63,13 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" })
+      carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' })
     }
   }
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" })
+      carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' })
     }
   }
 
@@ -79,7 +80,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
       const scrollPosition = (cardWidth + gap) * (index + 1)
       carouselRef.current.scrollTo({
         left: scrollPosition,
-        behavior: "smooth",
+        behavior: 'smooth'
       })
       setCurrentIndex(index)
     }
@@ -93,45 +94,45 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     <CarouselContext.Provider
       value={{ onCardClose: handleCardClose, currentIndex }}
     >
-      <div className="relative w-full">
-        <div className="flex justify-end gap-2">
+      <div className='relative w-full'>
+        <div className='flex justify-end gap-2'>
           <button
-            className="relative z-40 md:size-10 size-6 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
+            className='relative z-40 md:size-10 size-6 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50'
             onClick={scrollLeft}
             disabled={!canScrollLeft}
           >
-            <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" />
+            <IconArrowNarrowLeft className='h-6 w-6 text-gray-500' />
           </button>
           <button
-            className="relative z-40 md:size-10 size-6 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
+            className='relative z-40 md:size-10 size-6 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50'
             onClick={scrollRight}
             disabled={!canScrollRight}
           >
-            <IconArrowNarrowRight className="h-6 w-6 text-gray-500" />
+            <IconArrowNarrowRight className='h-6 w-6 text-gray-500' />
           </button>
         </div>
         <div
-          className="flex w-full overflow-x-scroll overscroll-x-hidden py-14 scroll-smooth [scrollbar-width:none]"
+          className='flex w-full overflow-x-scroll overscroll-x-hidden py-14 scroll-smooth [scrollbar-width:none]'
           ref={carouselRef}
-          onScroll={checkScrollability}
+          onScroll={checkScrollAbility}
         >
           <div
             className={cn(
-              "absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
+              'absolute right-0  z-1000 h-auto  w-[5%] overflow-hidden bg-linear-to-l'
             )}
           ></div>
 
           <div
             className={cn(
-              "flex flex-row justify-start gap-4 pl-4",
-              "mx-auto" // remove max-w-4xl if you want the carousel to span the full width of its container
+              'flex flex-row justify-start gap-4 pl-4',
+              'mx-auto' // remove max-w-4xl if you want the carousel to span the full width of its container
             )}
           >
             {items.map((item, index) => (
               <motion.div
                 initial={{
                   opacity: 0,
-                  y: 20,
+                  y: 20
                 }}
                 animate={{
                   opacity: 1,
@@ -139,12 +140,11 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   transition: {
                     duration: 0.5,
                     delay: 0.2 * index,
-                    ease: "easeOut",
-                    once: true,
-                  },
+                    ease: 'easeOut'
+                  }
                 }}
-                key={"card" + index}
-                className="last:pr-[5%] md:last:pr-[5%]  rounded-3xl"
+                key={'card' + index}
+                className='last:pr-[5%] md:last:pr-[5%]  rounded-3xl'
               >
                 {item}
               </motion.div>
@@ -160,7 +160,7 @@ export const Card = ({
   card,
   index,
   layout = false,
-  techStack,
+  techStack
 }: {
   card: Card
   index: number
@@ -173,25 +173,25 @@ export const Card = ({
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") {
+      if (event.key === 'Escape') {
         handleClose()
       }
     }
 
     if (open) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = 'auto'
     }
 
-    window.addEventListener("keydown", onKeyDown)
-    return () => window.removeEventListener("keydown", onKeyDown)
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
   }, [open])
 
   useOutsideClick(containerRef as any, () => handleClose())
 
   const handleOpen = () => {
-    // setOpen(true)
+    setOpen(true)
   }
 
   const handleClose = () => {
@@ -203,12 +203,12 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 h-screen z-50 overflow-auto">
+          <div className='fixed inset-0 h-screen z-50 overflow-auto'>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="bg-black/80 backdrop-blur-lg h-full w-full fixed inset-0"
+              className='bg-black/80 backdrop-blur-lg h-full w-full fixed inset-0'
             />
             <motion.div
               initial={{ opacity: 0 }}
@@ -216,27 +216,61 @@ export const Card = ({
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.title}` : undefined}
-              className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit  z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative"
+              className='max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit z-60 my-10 p-4 md:p-10 rounded-3xl font-sans relative'
             >
               <button
-                className="sticky top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
+                className='sticky top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center cursor-pointer'
                 onClick={handleClose}
               >
-                <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
+                <IconX className='h-6 w-6 text-neutral-100 dark:text-neutral-900' />
               </button>
               <motion.p
-                layoutId={layout ? `category-${card.title}` : undefined}
-                className="text-base font-medium text-black dark:text-white"
-              >
-                {card.category}
-              </motion.p>
-              <motion.p
                 layoutId={layout ? `title-${card.title}` : undefined}
-                className="text-2xl md:text-5xl font-semibold text-neutral-700 mt-4 dark:text-white"
+                className='text-2xl md:text-5xl font-semibold text-neutral-700 mt-4 dark:text-white'
               >
                 {card.title}
               </motion.p>
-              <div className="py-10">{card.content}</div>
+              {card.demo && (
+                <a
+                  href={card.demo}
+                  target='_blank'
+                  rel='noreferrer'
+                  className='mt-4 inline-flex w-fit items-center gap-2 rounded-md border border-black/20 dark:border-white/30 px-5 py-2 text-sm font-semibold text-black dark:text-white transition hover:bg-black/10 dark:hover:bg-white/10'
+                >
+                  View Demo
+                </a>
+              )}
+              <div className='py-8 space-y-6 md:grid md:grid-cols-2 md:gap-8 md:space-y-0'>
+                <div className='space-y-4'>
+                  {card.description && (
+                    <p className='text-base text-neutral-600 dark:text-neutral-200 leading-relaxed'>
+                      {card.description}
+                    </p>
+                  )}
+                  {card.content}
+                  {techStack?.length && (
+                    <div className='flex flex-wrap gap-2'>
+                      {techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className='inline-flex items-center rounded-full border border-black/20 dark:border-white/30 px-3 py-1 text-xs font-semibold text-black dark:text-white'
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className='relative w-auto h-120 rounded-2xl overflow-hidden'>
+                  <BlurImage
+                    src={card.src}
+                    alt={card.title}
+                    fill
+                    className='object-cover'
+                    sizes='(min-width: 768px) 640px, 100vw'
+                  />
+                </div>
+              </div>
             </motion.div>
           </div>
         )}
@@ -244,38 +278,32 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-80 md:h-[33rem] md:w-[26rem] overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className='rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-80 md:h-132 md:w-104 overflow-hidden flex flex-col items-start justify-start relative z-10'
         whileHover={{
-          transform: "translateY(-10px)",
+          transform: 'translateY(-10px)'
         }}
         transition={{
-          duration: 0.3,
+          duration: 0.3
         }}
       >
-        <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
-        <div className="relative z-40 p-3 md:p-8">
-          <motion.p
-            layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-white text-base md:text-xl font-semibold  text-left"
-          >
-            {card.category}
-          </motion.p>
+        <div className='absolute h-full top-0 inset-x-0 bg-linear-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none' />
+        <div className='relative z-40 p-3 md:p-8'>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="text-white text-xl md:text-3xl max-w-xs text-left [text-wrap:balance] mt-2 font-black italic"
+            className='text-white text-xl md:text-3xl max-w-xs text-left text-balance mt-2 font-black italic'
           >
             {card.title}
           </motion.p>
         </div>
         {techStack?.length && (
           <AnimatePresence>
-            <div className="absolute z-40 bottom-0 left-0 p-3 md:p-8 flex flex-wrap gap-1">
+            <div className='absolute z-40 bottom-0 left-0 p-3 md:p-8 flex flex-wrap gap-1'>
               {techStack.map((tech) => (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   key={tech}
-                  className="text-white md:text-sm font-semibold  text-left px-3 py-1 rounded-2xl bg-black/50 backdrop-blur-sm border text-[10px] shadow"
+                  className='text-white md:text-sm font-semibold  text-left px-3 py-1 rounded-2xl bg-black/50 backdrop-blur-sm border text-[10px] shadow'
                 >
                   {tech}
                 </motion.div>
@@ -283,12 +311,12 @@ export const Card = ({
             </div>
           </AnimatePresence>
         )}
-        <div className="absolute duration-500 z-[11] dark:bg-slate-800 bg-slate-400 dark:opacity-35 opacity-20 dark:hover:opacity-20 hover:opacity-35 inset-0 backdrop-blur-sm"></div>
+        <div className='absolute duration-500 z-11 dark:bg-slate-800 bg-slate-400 dark:opacity-35 opacity-20 dark:hover:opacity-20 hover:opacity-35 inset-0 backdrop-blur-sm'></div>
         <BlurImage
           src={card.src}
           alt={card.title}
           fill
-          className="object-cover absolute z-10 inset-0  transition duration-300"
+          className='object-cover absolute z-10 inset-0  transition duration-300'
         />
       </motion.button>
     </>
@@ -307,18 +335,18 @@ export const BlurImage = ({
   return (
     <Image
       className={cn(
-        "transition duration-300",
-        isLoading ? "blur-sm" : "blur-0",
+        'transition duration-300',
+        isLoading ? 'blur-sm' : 'blur-0',
         className
       )}
       onLoad={() => setLoading(false)}
       src={src}
       width={width}
       height={height}
-      loading="lazy"
-      decoding="async"
-      blurDataURL={typeof src === "string" ? src : undefined}
-      alt={alt ? alt : "Background of a beautiful view"}
+      loading='lazy'
+      decoding='async'
+      blurDataURL={typeof src === 'string' ? src : undefined}
+      alt={alt ? alt : 'Background of a beautiful view'}
       {...rest}
     />
   )

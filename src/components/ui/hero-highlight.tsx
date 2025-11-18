@@ -1,12 +1,12 @@
-"use client"
-import { cn } from "@/lib/utils"
-import { useMotionValue, motion, useMotionTemplate } from "motion/react"
-import React from "react"
+'use client'
+import { cn } from '@/lib/utils'
+import { useMotionValue, motion, useMotionTemplate } from 'motion/react'
+import React from 'react'
 
 export const HeroHighlight = ({
   children,
   className,
-  containerClassName,
+  containerClassName
 }: {
   children: React.ReactNode
   className?: string
@@ -19,18 +19,18 @@ export const HeroHighlight = ({
   const dotPatterns = {
     light: {
       default: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='16' height='16' fill='none'%3E%3Ccircle fill='%23d4d4d4' opacity='0.4' id='pattern-circle' cx='10' cy='10' r='2.5'%3E%3C/circle%3E%3C/svg%3E")`,
-      hover: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='16' height='16' fill='none'%3E%3Ccircle fill='%236366f1' opacity='0.4' id='pattern-circle' cx='10' cy='10' r='2.5'%3E%3C/circle%3E%3C/svg%3E")`,
+      hover: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='16' height='16' fill='none'%3E%3Ccircle fill='%236366f1' opacity='0.4' id='pattern-circle' cx='10' cy='10' r='2.5'%3E%3C/circle%3E%3C/svg%3E")`
     },
     dark: {
       default: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' opacity='0.4' width='16' height='16' fill='none'%3E%3Ccircle fill='%23404040' id='pattern-circle' cx='10' cy='10' r='2.5'%3E%3C/circle%3E%3C/svg%3E")`,
-      hover: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' opacity='0.4' width='16' height='16' fill='none'%3E%3Ccircle fill='%238183f4' id='pattern-circle' cx='10' cy='10' r='2.5'%3E%3C/circle%3E%3C/svg%3E")`,
-    },
+      hover: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' opacity='0.4' width='16' height='16' fill='none'%3E%3Ccircle fill='%238183f4' id='pattern-circle' cx='10' cy='10' r='2.5'%3E%3C/circle%3E%3C/svg%3E")`
+    }
   }
 
   function handleMouseMove({
     currentTarget,
     clientX,
-    clientY,
+    clientY
   }: React.MouseEvent<HTMLDivElement>) {
     if (!currentTarget) return
     const { left, top } = currentTarget.getBoundingClientRect()
@@ -41,25 +41,25 @@ export const HeroHighlight = ({
   return (
     <div
       className={cn(
-        "group relative flex min-h-screen w-full items-center justify-center bg-white dark:bg-black",
+        'group relative flex min-h-screen w-full items-center justify-center bg-white dark:bg-black',
         containerClassName
       )}
       onMouseMove={handleMouseMove}
     >
       <div
-        className="pointer-events-none absolute inset-0 dark:hidden"
+        className='pointer-events-none absolute inset-0 dark:hidden'
         style={{
-          backgroundImage: dotPatterns.light.default,
+          backgroundImage: dotPatterns.light.default
         }}
       />
       <div
-        className="pointer-events-none absolute inset-0 hidden dark:block"
+        className='pointer-events-none absolute inset-0 hidden dark:block'
         style={{
-          backgroundImage: dotPatterns.dark.default,
+          backgroundImage: dotPatterns.dark.default
         }}
       />
       <motion.div
-        className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 dark:hidden"
+        className='pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 dark:hidden'
         style={{
           backgroundImage: dotPatterns.light.hover,
           WebkitMaskImage: useMotionTemplate`
@@ -75,11 +75,11 @@ export const HeroHighlight = ({
               black 0%,
               transparent 100%
             )
-          `,
+          `
         }}
       />
       <motion.div
-        className="pointer-events-none absolute inset-0 hidden opacity-0 transition duration-300 group-hover:opacity-100 dark:block"
+        className='pointer-events-none absolute inset-0 hidden opacity-0 transition duration-300 group-hover:opacity-100 dark:block'
         style={{
           backgroundImage: dotPatterns.dark.hover,
           WebkitMaskImage: useMotionTemplate`
@@ -95,18 +95,18 @@ export const HeroHighlight = ({
               black 0%,
               transparent 100%
             )
-          `,
+          `
         }}
       />
 
-      <div className={cn("relative z-20 w-full", className)}>{children}</div>
+      <div className={cn('relative z-20 w-full', className)}>{children}</div>
     </div>
   )
 }
 
 export const Highlight = ({
   children,
-  className,
+  className
 }: {
   children: React.ReactNode
   className?: string
@@ -114,23 +114,23 @@ export const Highlight = ({
   return (
     <motion.span
       initial={{
-        backgroundSize: "0% 100%",
+        backgroundSize: '0% 100%'
       }}
       animate={{
-        backgroundSize: "100% 100%",
+        backgroundSize: '100% 100%'
       }}
       transition={{
         duration: 2,
-        ease: "linear",
-        delay: 0.7,
+        ease: 'linear',
+        delay: 0.7
       }}
       style={{
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "left center",
-        display: "inline",
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'left center',
+        display: 'inline'
       }}
       className={cn(
-        `relative inline-block rounded-lg bg-gradient-to-r from-green-900 to-green-900 px-1 pb-1 dark:from-green-900 dark:to-green-900`,
+        `relative inline-block rounded-lg bg-linear-to-r from-green-900 to-green-900 px-1 pb-1 dark:from-green-900 dark:to-green-900`,
         className
       )}
     >

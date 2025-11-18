@@ -5,12 +5,10 @@ import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid'
 import { EvervaultCard } from '@/components/ui/evervault-card'
 import { cn } from '@/lib/utils'
 import { IconClipboardCopy } from '@tabler/icons-react'
-import { Blocks, Rss } from 'lucide-react'
+import { Blocks } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 import { StackCloud } from './stack-cloud'
-import { BlurImage } from '@/components/ui/apple-cards-carousel'
-import { LEARNING_RESOURCES } from '@/data/learning-resource'
 
 export function PersonalInterests() {
   const [mounted, setMounted] = useState(false)
@@ -114,60 +112,6 @@ const SkeletonTwo = () => {
     </motion.div>
   )
 }
-const SkeletonFour = () => {
-  const first = {
-    initial: {
-      x: 20,
-      rotate: -5
-    },
-    hover: {
-      x: 0,
-      rotate: 0
-    }
-  }
-  const second = {
-    initial: {
-      x: -20,
-      rotate: 5
-    },
-    hover: {
-      x: 0,
-      rotate: 0
-    }
-  }
-  return (
-    <motion.div
-      initial='initial'
-      animate='animate'
-      whileHover='hover'
-      className='flex flex-1 w-full h-full min-h-24 dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row space-x-2'
-    >
-      {LEARNING_RESOURCES.map(
-        ({ href, imgSrc, alt, description, imageWrapperClass }, index) => {
-          const variant = index === 0 ? first : index === 2 ? second : undefined
-
-          return (
-            <motion.a
-              key={href}
-              variants={variant}
-              className='h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/10 border border-neutral-200 flex flex-col items-center justify-center cursor-none relative z-20'
-              href={href}
-              target='_blank'
-            >
-              <div className={imageWrapperClass}>
-                <BlurImage src={imgSrc} alt={alt} height={100} width={100} />
-              </div>
-              <p className='sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4'>
-                {description}
-              </p>
-            </motion.a>
-          )
-        }
-      )}
-      <Pointer className='fill-blue-500' />
-    </motion.div>
-  )
-}
 
 const items = [
   {
@@ -192,16 +136,5 @@ const items = [
     header: <SkeletonTwo />,
     className: 'md:col-span-1',
     icon: <Blocks className='h-4 w-4 text-neutral-500' />
-  },
-  {
-    title: 'Go-To Dev Blogs',
-    description: (
-      <span className='text-sm'>
-        Where I learn, stay up-to-date, and explore new frontend trends.
-      </span>
-    ),
-    header: <SkeletonFour />,
-    className: 'md:col-span-2',
-    icon: <Rss className='h-4 w-4 text-neutral-500' />
   }
 ]

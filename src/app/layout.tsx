@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: 'Vo Bao Long | Frontend Developer Portfolio',
     description:
       "Discover Vo Bao Long's expertise in Frontend Development, React, and Next.js. View projects, case studies, and technical skills.",
-    url: 'https://',
+    url: 'https://vobaolong-portfolio.vercel.app/',
     type: 'website',
     images: [
       {

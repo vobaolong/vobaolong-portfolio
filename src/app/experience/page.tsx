@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'Experience | Bao Long Dev',
     description:
       'Frontend Developer with hands-on experience in React, Next.js, and modern UI/UX design.',
-    url: 'https://',
+    url: 'https://vobaolong-portfolio.vercel.app/',
     siteName: 'Bao Long Dev'
   },
   twitter: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       "Check out Bao Long Dev's past work and achievements in frontend development."
   },
   alternates: {
-    canonical: 'https://'
+    canonical: 'https://vobaolong-portfolio.vercel.app/'
   }
 }
 
