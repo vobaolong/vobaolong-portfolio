@@ -20,7 +20,7 @@ export function MyInformation() {
           </div>
 
           <div className='relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3 col-span-1 md:col-span-2 lg:col-span-3 order-1 md:order-2'>
-            <GlowingEffect
+            {/* <GlowingEffect
               blur={0}
               borderWidth={3}
               spread={80}
@@ -28,7 +28,7 @@ export function MyInformation() {
               disabled={false}
               proximity={64}
               inactiveZone={0.01}
-            />
+            /> */}
             <div className='border-0.75 relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl p-6 md:p-6 dark:shadow-[0px_0px_27px_0px_#2D2D2D]'>
               <div className='relative flex flex-1 flex-col gap-6'>
                 <div className='flex w-full md:flex-row flex-col items-center justify-between'>
