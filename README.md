@@ -118,14 +118,13 @@ vobaolong-portfolio/
 ├── public/ # Static assets
 │ ├── images/ # Images and media
 │ ├── icons/ # Favicon and icons
-│ └── resume.pdf # Downloadable resume
+│ └── CV_VoBaoLong_Web_Developer_en.pdf # Downloadable resume
 ├── src/
 │ ├── app/ # Next.js app router
 │ ├── components/ # React components
 │ ├── data/ # Static data
 │ ├── lib/ # Utilities
 │ └── styles/ # CSS files
-├── .env.local # Environment variables
 ├── next.config.js # Next.js configuration
 ├── tailwind.config.js # Tailwind CSS configuration
 └── package.json # Dependencies and scripts
