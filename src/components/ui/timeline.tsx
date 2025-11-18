@@ -14,11 +14,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const [height, setHeight] = useState(0)
 
   useEffect(() => {
-    if (!ref.current) return
+    const currentRef = ref.current
+    if (!currentRef) return
 
     const updateHeight = () => {
-      if (ref.current) {
-        const rect = ref.current.getBoundingClientRect()
+      if (currentRef) {
+        const rect = currentRef.getBoundingClientRect()
         setHeight(rect.height)
       }
     }
@@ -26,10 +27,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     updateHeight()
 
     const resizeObserver = new ResizeObserver(updateHeight)
-    resizeObserver.observe(ref.current)
+    resizeObserver.observe(currentRef)
 
     return () => {
-      if (ref.current) resizeObserver.unobserve(ref.current)
+      if (currentRef) resizeObserver.unobserve(currentRef)
     }
   }, [])
 

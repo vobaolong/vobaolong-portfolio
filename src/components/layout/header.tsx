@@ -21,7 +21,6 @@ import {
   DrawerTitle,
   DrawerTrigger
 } from '../ui/drawer'
-import { Separator } from '@radix-ui/react-dropdown-menu'
 
 const links = [
   {

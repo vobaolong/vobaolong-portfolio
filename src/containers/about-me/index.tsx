@@ -52,7 +52,8 @@ export function MyInformation() {
                 </div>
                 <div className='space-y-6 flex-1 flex flex-col items-center justify-center'>
                   <h3 className='pt-0.5 text-lg font-bold text-balance text-black md:text-4xl dark:text-white'>
-                    I'm passionate about technology and frontend development.
+                    I&apos;m passionate about technology and frontend
+                    development.
                   </h3>
                   <h2 className='text-sm/[1.125rem] text-black md:text-base/[1.375rem] dark:text-neutral-400 [&_b]:md:font-semibold [&_strong]:md:font-semibold'>
                     I enjoy learning, taking initiative, and tackling complex

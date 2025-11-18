@@ -8,7 +8,13 @@ import { useRouter } from 'next/navigation'
 import { FullScreen } from '../full-screen'
 import Link from 'next/link'
 
-export const ComingSoonPage = ({ pageName }: { pageName?: string }) => {
+export const ComingSoonPage = ({
+  pageName = 'Page'
+}: {
+  pageName?: string
+}) => {
+  // Use pageName for potential future functionality
+  console.log(`Loading ${pageName} page`)
   const [mounted, setMounted] = useState(false)
 
   const router = useRouter()
