@@ -2,7 +2,7 @@
 
 A modern, responsive developer portfolio showcasing skills, projects, and professional experience. Built with cutting-edge web technologies and optimized for performance.
 
-![Portfolio Preview](https://ibb.co/ZpPdH2sZ)
+![Portfolio Preview](https://i.ibb.co/hJjsXY5q/Screenshot-2025-11-18-at-22-45-33.png)
 
 ## 🚀 Live Demo
 
