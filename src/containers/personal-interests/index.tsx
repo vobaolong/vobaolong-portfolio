@@ -49,12 +49,13 @@ const SkeletonOne = () => {
       <EvervaultCard
         text={
           <a
-            href='/files/CV_VoBaoLong_Web_Developer_en.pdf'
-            download
+            href='https://docs.google.com/viewer?url=https://vobaolong-portfolio.vercel.app/files/CV_VoBaoLong_Web_Developer_en.pdf&embedded=true'
+            target='_blank'
+            rel='noopener noreferrer'
             className='flex flex-col items-center justify-center'
           >
             Resume
-            <div className='text-sm text-gray-500'>(Click to download)</div>
+            <div className='text-sm text-gray-500'>(Click to view online)</div>
           </a>
         }
       />
@@ -115,11 +116,11 @@ const SkeletonTwo = () => {
 
 const items = [
   {
-    title: 'Download My Resume',
+    title: 'View My Resume',
     description: (
       <span className='text-sm'>
-        A quick summary of my experience, projects, and skills — available for
-        download.
+        A quick summary of my experience, projects, and skills — available to
+        view online.
       </span>
     ),
     header: <SkeletonOne />,

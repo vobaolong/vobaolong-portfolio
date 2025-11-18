@@ -114,13 +114,9 @@ const KeyAchievements = () => {
       key={currentTheme}
     >
       <motion.div
-        className='p-4 rounded-lg bg-gray-50 dark:bg-gray-700 flex flex-col items-center text-center cursor-pointer transition-colors duration-300'
+        className='p-4 rounded-lg bg-gray-50 dark:bg-gray-700 flex flex-col items-center text-center cursor-pointer transition-colors duration-300 hover:bg-purple-50 dark:hover:bg-purple-900/20'
         whileHover={{
           scale: 1.05,
-          backgroundColor:
-            currentTheme === 'dark'
-              ? 'rgba(167, 139, 250, 0.2)'
-              : 'rgb(243 232 255)',
           boxShadow:
             '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
         }}
@@ -143,13 +139,9 @@ const KeyAchievements = () => {
       </motion.div>
 
       <motion.div
-        className='p-4 rounded-lg bg-gray-50 dark:bg-gray-700 flex flex-col items-center text-center cursor-pointer transition-colors duration-300'
+        className='p-4 rounded-lg bg-gray-50 dark:bg-gray-700 flex flex-col items-center text-center cursor-pointer transition-colors duration-300 hover:bg-blue-50 dark:hover:bg-blue-900/20'
         whileHover={{
           scale: 1.05,
-          backgroundColor:
-            currentTheme === 'dark'
-              ? 'rgba(96, 165, 250, 0.2)'
-              : 'rgb(219 234 254)',
           boxShadow:
             '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
         }}
@@ -172,13 +164,9 @@ const KeyAchievements = () => {
       </motion.div>
 
       <motion.div
-        className='p-4 rounded-lg bg-gray-50 dark:bg-gray-700 flex flex-col items-center text-center cursor-pointer transition-colors duration-300'
+        className='p-4 rounded-lg bg-gray-50 dark:bg-gray-700 flex flex-col items-center text-center cursor-pointer transition-colors duration-300 hover:bg-amber-50 dark:hover:bg-amber-900/20'
         whileHover={{
           scale: 1.05,
-          backgroundColor:
-            currentTheme === 'dark'
-              ? 'rgba(251, 191, 36, 0.2)'
-              : 'rgb(254 243 199)',
           boxShadow:
             '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
         }}
@@ -204,9 +192,6 @@ const KeyAchievements = () => {
 }
 
 const KeySkills = () => {
-  const { theme, systemTheme } = useTheme()
-
-  const currentTheme = theme === 'system' ? systemTheme : theme
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -314,8 +299,6 @@ const KeySkills = () => {
           variants={badgeVariants}
           whileHover={{
             scale: 1.1,
-            backgroundColor:
-              currentTheme === 'dark' ? skill.darkColor : skill.color,
             boxShadow:
               '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
             y: -5
